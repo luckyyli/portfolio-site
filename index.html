@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home | Lucky Li</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="javascript/disable-image-theft.js"></script>
+	
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="logo-home">
+      <a href="index.html" title="Visit Home Page"><img src="images/logo-icons/logo-home.png" alt="Lucky Li"></a>
+    </div>
+		<nav class="nav-home">
+      <ul>
+        <li class="expand-underline"><a href="design.html">design</a></li>
+        <li class="expand-underline sub-menu-parent"><a href="photography.html">photography</a>
+          <ul class="sub-menu">
+            <li><a href="photography/human.html">Human</a></li>
+            <li><a href="photography/europe.html">Europe</a></li>
+          </ul>
+        </li>
+        <li class="expand-underline sub-menu-parent"><a href="fibers.html">fiber art</a>
+          <ul class="sub-menu">
+            <li><a href="fibers/weaving.html">Weaving</a></li>
+            <li><a href="fibers/embroidery.html">Embroidery</a></li>
+          </ul>
+        </li>
+        <li class="expand-underline"><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+		
+		<main>
+			<section class="intro">
+				<p>
+				<span class="intro-heading">Hello,</span>
+				My name is Lucky and I love to make things. The mediums in which I work straddle between the digital and analog. Here's a glimpse into some of my creations.</p>
+				<a href="#categories-section" class="next-section-arrow"><img src="images/logo-icons/home-intro-arrow.png" alt="view next section" id="home-down-arrow"></a>
+			</section>
+		
+			<section class="categories" id="categories-section">
+				<a href="#" title="view design work"><figure>
+					<div class="thumbnail">
+						<span class="overlay">View</span>
+						<img src="images/design/placeholder.png" alt="image of design work">
+					</div>
+					<p>design</p>
+				</figure></a>
+		
+				<a href="photography.html" title="view photography work"><figure>
+					<div class="thumbnail">
+						<span class="overlay">View</span>
+						<img src="images/home-thumbnails/human12.jpg" alt="image of photography work">
+					</div>
+					<p>photography</p>
+				</figure></a>
+		
+				<a href="fibers.html" title="view fibers work"><figure>
+					<div class="thumbnail">
+						<span class="overlay">View</span>
+						<img src="images/home-thumbnails/weaving10.jpg" alt="image of fibers work">
+					</div>
+					<p>fiber arts</p>
+				</figure></a>
+			</section>
+		</main>
+		<footer>
+			<ul class="social-nav">
+				<li><a href="mailto:leyanluckyli@gmail.com"><img src="images/logo-icons/email.png" alt="email icon"></a></li>
+				<li><a href="http://linkedin.com/in/luckyleyanli"><img src="images/logo-icons/linkedin.png" alt="LinkedIn icon"></a></li>
+				<li><a href="http://instagram.com/luckyleyanli/"><img src="images/logo-icons/instagram.png" alt="Instagram icon"></a></li>
+			</ul>
+			<p class="copyright">&copy; <script language="javascript" type="text/javascript">
+				var today = new Date()
+				var year = today.getFullYear()
+				document.write(year)
+				</script> Lucky Li. All Rights Reserved.</p>
+		</footer>
+	</div>
+
+
+<script>
+	// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+
+</body>
+
+
+
+</html>

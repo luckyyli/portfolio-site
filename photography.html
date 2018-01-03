@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photography | Lucky Li</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Muli:200,300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="skidder/src/jquery.skidder.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="javascript/disable-image-theft.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+		<a href="index.html" title="Visit Home Page"  class="logo"><img src="images/logo-icons/logo-main.png" alt="Lucky Li" ></a>
+    <nav class="nav-main">
+      <ul>
+        <li class="expand-underline"><a href="design.html">design</a></li>
+        <li class="expand-underline sub-menu-parent"><a href="photography.html" class="selected">photography</a>
+          <ul class="sub-menu">
+            <li><a href="photography/human.html">Human</a></li>
+            <li><a href="photography/europe.html">Europe</a></li>
+          </ul>
+        </li>
+        <li class="expand-underline sub-menu-parent"><a href="fibers.html">fiber art</a>
+          <ul class="sub-menu">
+            <li><a href="fibers/weaving.html">Weaving</a></li>
+            <li><a href="fibers/embroidery.html">Embroidery</a></li>
+          </ul>
+        </li>
+        <li class="expand-underline"><a href="contact.html">contact</a></li>
+      </ul>
+    </nav>
+		
+		<main>
+			<div class="slideshow" style="height: 0; overflow: hidden">
+				<div class="slide">
+					<a href="photography/human.html"><span class="overlay">human</span><img src="images/photography/landing-thumbnails/human.jpg" alt="photo from Human series">
+						</a>
+				</div>
+				<div class="slide">
+					<a href="photography/europe.html"><span class="overlay">europe</span><img src="images/photography/landing-thumbnails/europe.jpg" alt="photo from Europe series"></a>
+				</div>
+			</div>
+
+
+		</main>
+		<footer>
+			<ul class="social-nav">
+        <li><a href="mailto:leyanluckyli@gmail.com"><img src="images/logo-icons/email.png" alt="email icon"></a></li>
+        <li><a href="http://linkedin.com/in/luckyleyanli"><img src="images/logo-icons/linkedin.png" alt="LinkedIn icon"></a></li>
+        <li><a href="http://instagram.com/luckyleyanli/"><img src="images/logo-icons/instagram.png" alt="Instagram icon"></a></li>
+      </ul>
+			<p class="copyright">&copy; <script language="javascript" type="text/javascript">
+        var today = new Date()
+        var year = today.getFullYear()
+        document.write(year)
+        </script> Lucky Li. All Rights Reserved.</p>
+		</footer>
+	</div>
+
+<script src="skidder/src/jquery.skidder.js"></script>
+<script src="skidder/lib/imagesloaded.js"></script>
+<script src="skidder/lib/smartresize.js"></script>
+<script>
+    $('.slideshow').each( function() {  
+var $slideshow = $(this);
+$slideshow.imagesLoaded( function() {
+$slideshow.skidder({
+
+  // Class of the slide element. 
+  slideClass: '.slide',
+  imageClass: "",
+
+  // 'animate' or 'css'
+  animationType   : 'css',
+
+  // Scales widest image to maxSlideWidth.
+  // Adjusts slideshow height accordingly. 
+  scaleSlides   : true,
+
+  // enable lazy load
+  lazyLoad: false,
+  lazyLoadAutoInit: true,
+  lazyLoadWindow  : 1,
+
+  // Scales slides (via css) to uniform values, depending on maxWidth, maxHeight, and scaleTo settings 
+  scaleSlides     : true,
+
+  // Scale widest image to this width if scaleSlides == true
+  maxWidth : 700,
+  maxHeight: 800,
+
+  // Defines the scaling mode of scaleSlides. 
+  // At the moments there are two modes: Scale to smallest, and ratio (responsive) mode. 
+  // "smallest" - height of the least tall image determines height of slideshow. 
+  // [x, y] – an array of two number defining a ratio for the slide show.
+  scaleTo: [1,1], 
+
+  // Only for ratio mode: Determines wether images that are less wide than the current ratio will fill the viewport, having their top and bottom cropped ("false"), or fit the viewport, leaving room to the sides ("true").
+  preservePortrait: false,
+  spaceSlides     : false,
+  noScaleClass    : ".skidder-no-scale", 
+
+  // Creates a clickable and stylable paging dot for each slide.
+  paging: true,
+  pagingWrapper : ".skidder-pager",
+  pagingElement : ".skidder-pager-dot",
+
+  // Enable swiping on touch device.
+  swiping   : true,
+
+  // Set to true if you don't want your slideshow centered.
+  leftaligned   : false,
+
+  // Set to false if you don't want your slideshow to wrap around
+  cycle : true,
+
+  // In non-cycling mode jumpback will display a 'return to first slide' arrow at the last slide.
+  jumpback  : false,
+
+  // Transition speed.
+  speed : 400,
+
+  // Enable autoplay
+  autoplay  : false,
+
+  // Resume autoplay after paging has been clicked
+  autoplayResume: false,
+
+  // autoplay interval
+  interval  : 4000,
+
+  // Choose between 'slide' or 'fade'
+  transition: "slide",
+
+  // Adds classes 'left-from-active' and 'right-from-active' to slides after transition is complete. 
+  // useful for triggering e.g css transitions on particular slide elements. 
+  // costs a little performance so leave inactive if not needed. 
+  directionClasses: false,
+
+  // Callbacks
+  afterSliding    : function() {},
+  afterInit       : function() {},
+  afterResize     : function(instance) {},
+  afterLazyLoad   : function() {}
+});
+});
+});
+
+$(window).smartresize(function(){
+$('.slideshow').skidder('resize');
+});
+
+  </script>
+
+</body>
+
+
+
+</html>
